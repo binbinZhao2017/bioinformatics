@@ -1,21 +1,54 @@
 /*
  D3 charts JS (2019-03-22)
-circos module
+ circos module
  Author: binbin.zhao
+
+ 11 elements are included, including scatter, heatmap, line, peak, bar, arrow, link, highlight, etc.
+ all elements are drew in two method, canvas and svg(Commented Out Code).
+ tooltip position in cancas are calculated by d3.Delaunay
+ svg can only display tens of thousands of data, and canvas can display up to 4 million data
+
+ Data format
+   genome  = [
+         ["2L" , 23011544],
+         ["2R" , 21146708],
+         ["3L" , 24543557],
+         ["3R" , 27905053],
+         ["X" , 22422827],
+         ["4" , 1351857]
+      ];
+
+   data_highlight = [
+            {chr: "2L", start: "0" , end: "2300000", color: "rgb(255,255,255)"},
+            {chr: "2L", start: "2300000" , end: "5400000", color: "rgb(200,200,200)"},
+            {chr: "2L", start: "5400000" , end: "7200000", color: "rgb(255,255,255)"},
+            {chr: "2L", start: "7200000" , end: "9200000", color: "rgb(200,200,200)"},
+            {chr: "2L", start: "9200000" , end: "12700000", color: "rgb(255,255,255)"},
+            {chr: "2L", start: "12700000" , end: "16200000", color: "rgb(200,200,200)"},
+            {chr: "2L", start: "16200000" , end: "20400000", color: "rgb(255,255,255)"},
+            {chr: "2L", start: "20400000" , end: "23900000", color: "rgb(200,200,200)"},
+            {chr: "2L", start: "23900000" , end: "28000000", color: "rgb(255,255,255)"},
+            {chr: "2L", start: "28000000" , end: "30200000", color: "rgb(200,200,200)"},
+            {chr: "2L", start: "30200000" , end: "32400000", color: "rgb(255,255,255)"},
+ ],
+
+  data for line/scatter/heatmap/bar/peak
+      [
+            {chr: "2L", start: "9011548" , end: "10011544", name: "TP53", value: "0.8", group: "apple" } ,
+             {chr: "2L", start: "10011548" , end: "11011544", name: "TP53", value: "0.23", group: "banana" } ,
+             {chr: "2L", start: "11011548" , end: "12011544", name: "TP53", value: "0.36", group: "apple" } ,
+             {chr: "2L", start: "12011548" , end: "13011544", name: "TP53", value: "0.27", group: "apple" } ,
+             {chr: "2L", start: "13011548" , end: "14011544", name: "TP53", value: "0.91", group: "banana" } ,
+             {chr: "2L", start: "14011548" , end: "15011544", name: "TP53", value: "0.45", group: "apple" } ,
+             {chr: "2L", start: "15011548" , end: "16011544", name: "TP53", value: "0.33", group: "banana" } ,
+             {chr: "2L", start: "16011548" , end: "17011544", name: "TP53", value: "-2", group: "apple" } ,
+    ]
 */
 import $text_size from '../util/text_g_size';
 import $shape from '../elements/shape';
 import $colorTheme from '../elements/colorTheme';
 export default $circos;
 
-/*
-  draw circos
-  11 elements are included, including scatter, heatmap, line, peak, bar, arrow, link, highlight, etc.
-  all elements are drew in two method, canvas and svg(Commented Out Code).
-  tooltip position in cancas are calculated by d3.Delaunay
-  svg can only display tens of thousands of data, and canvas can display up to 4 million data
-
-*/
 var $circos = {
     /**
      *
