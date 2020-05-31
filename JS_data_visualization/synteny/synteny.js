@@ -56,7 +56,6 @@ var $synteny = {
         this.draw(params);
     },
     /**
-     * 检查参数,当前画柱子的参数是否存在问题,
      *
      *
      *
