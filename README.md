@@ -5,7 +5,7 @@ Due to the company's confidentiality policy, I can just show part of the scripts
 
 I was mainly involved in two projects: WGS analysis and Data visualization. 
 
-![WGS_Analysis Framework](./Sangerbiocluster)
+![WGS_Analysis Framework](./Sangerbiocluster.png)
 
 ![Data Visualization Framework](./JS_data_visualization/data_visualization_structure.png)
 
