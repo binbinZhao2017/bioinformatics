@@ -1,5 +1,5 @@
 # bioinformatics
-These are parts of the scripts that I wrote in the past two years.
+These are parts of the scripts that I wrote at my first work.
 
 Due to the company's confidentiality policy, I can just show part of the scripts to demonstrate my programming skills.
 
