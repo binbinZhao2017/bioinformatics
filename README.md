@@ -1,4 +1,4 @@
-# bioinformatics
+# scripts_of_WGS_and_data_visualization
 These are parts of the scripts that I wrote at my first work.
 
 Due to the company's confidentiality policy, I can just show part of the scripts to demonstrate my programming skills.
